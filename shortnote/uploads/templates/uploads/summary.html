@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Short Note</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <a class="navbar-brand" href="{% url 'home' %}">Short Note</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+       <div class="collapse navbar-collapse" id="mynav">
+            <ul class="nav navbar-nav">
+                <li ><a class="nav-link">About</a></li>
+                <li ><a class="nav-link" href="https://github.com/Yassr">GitHub</a></li>
+                <li ><a class="nav-link" href="https://www.linkedin.com/in/yassrshaar/">LinkedIn</a></li>
+            </ul>
+       </div>
+
+   </nav>
+
+   <div class="container">
+       <h1 class ="text-center"><b>Short Note</b></h1>
+       {% load static %}
+       <img src = "{% static 'uploads/summarisedpic.png' %}" class="img-fluid d-block" style="max-width: 100%; height: auto;" alt="Responsive image"/>
+
+     <br /><br />
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+      <div align="center" class="embed-responsive embed-responsive-16by9">
+          <video src="{{ the_final_mp4 }}" preload="auto" controls="" autoplay="true"></video>
+      </div>
+      </div>
+        <!--<div class="media">-->
+          <!--<div class="media-body">-->
+            <!--<h4 class="media-heading" style='margin: 1em;padding: 0 4em 2em 0;'>Summarised Sentences</h4>-->
+            <!--<p style='margin: 1em;padding: 0 4em 2em 0;'>{{ all_lines|linebreaksbr }}</p>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  Summarised Text
+                </button>
+              </h5>
+            </div><h3 style='padding: 1em 0 0 1em;'>Summarised Text</h3>
+                <p style='margin: 1em;padding: 0 4em 2em 0;'>{{ all_lines|safe }}</p>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Original Text
+                </button>
+              </h5>
+            </div><h3 style='padding: 1em 0 0 1em;'>Original Text</h3>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                <p style='margin: 1em;padding: 0 4em 2em 0;'>{{ similar_lines|safe }}</p>
+              </div>
+            </div>
+        </div>
+
+
+    </div>
+
+   </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
